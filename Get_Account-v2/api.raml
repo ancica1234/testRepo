@@ -1,0 +1,37 @@
+#%RAML 0.8
+title: Get Account
+version: v2
+baseUri: http://localhost:8080/api/{version}
+/accounts:
+  /{accountID}:
+    get:
+      description: Get account by account ID
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                  {
+                    "quoteAmount": 30,
+                      "chargeDetail": [
+                      {
+                          "offeringType": "QBO",
+                          "chargeType": "Recurring",
+                          "chargeDescription": "QBO recurring charge",
+                          "rateUsed": 30,
+                          "amount": 30,
+                          "discountDetail": [
+                           {
+                              "discountID": "123",
+                              "description": "40% off discount",
+                              "startDate": "2014-12-17T18:13:51.0",
+                              "endDate": "2015-02-17T18:13:51.0",
+                              "discountType": "Percent",
+                              "discountValue": 40
+                            }
+                            ]
+                            }
+                            ]
+                          }
+
+
